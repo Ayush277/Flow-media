@@ -1,5 +1,6 @@
 import { CreatePost } from "@/components/feed/CreatePost";
 import { FeedPost } from "@/components/feed/FeedPost";
+import { StoriesSection } from "@/components/feed/StoriesSection";
 
 const DUMMY_POSTS = [
     {
@@ -48,6 +49,9 @@ export default function FeedPage() {
             <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-md border-b border-white/10 p-4">
                 <h1 className="text-xl font-bold">Home</h1>
             </div>
+
+            <StoriesSection />
+
             <CreatePost />
 
             <div>
