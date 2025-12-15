@@ -2478,12 +2478,12 @@ const FRAMES = [
 ];
 function ProfileHeader() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(99);
-    if ($[0] !== "cac48be4048cf02d61efc2f625ee3044879bc20e60073a05ff9ae96d90c2b745") {
-        for(let $i = 0; $i < 99; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(123);
+    if ($[0] !== "83d219d9ce03fbdac0005d8b15c85ea6daccb0e506ebac3e2ca1545f2467de1e") {
+        for(let $i = 0; $i < 123; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "cac48be4048cf02d61efc2f625ee3044879bc20e60073a05ff9ae96d90c2b745";
+        $[0] = "83d219d9ce03fbdac0005d8b15c85ea6daccb0e506ebac3e2ca1545f2467de1e";
     }
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     let t0;
@@ -2502,6 +2502,9 @@ function ProfileHeader() {
     const [location, setLocation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [website, setWebsite] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [selectedFrame, setSelectedFrame] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("default");
+    const [githubStreak, setGithubStreak] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [leetcodeSolved, setLeetcodeSolved] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [wakatimeHours, setWakatimeHours] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     let t1;
     let t2;
     if ($[2] !== profile) {
@@ -2513,6 +2516,10 @@ function ProfileHeader() {
                     setLocation(profile.location || "Earth");
                     setWebsite(profile.website || "");
                     setSelectedFrame(profile.selected_frame || "default");
+                    const stats = profile.external_stats || {};
+                    setGithubStreak(stats.github_streak || 0);
+                    setLeetcodeSolved(stats.leetcode_solved || 0);
+                    setWakatimeHours(stats.wakatime_hours || 0);
                 }
             }
         })["ProfileHeader[useEffect()]"];
@@ -2542,7 +2549,7 @@ function ProfileHeader() {
     }
     const handleSignOut = t3;
     let t4;
-    if ($[7] !== bio || $[8] !== location || $[9] !== name || $[10] !== selectedFrame || $[11] !== updateProfile || $[12] !== website) {
+    if ($[7] !== bio || $[8] !== githubStreak || $[9] !== leetcodeSolved || $[10] !== location || $[11] !== name || $[12] !== selectedFrame || $[13] !== updateProfile || $[14] !== wakatimeHours || $[15] !== website) {
         t4 = ({
             "ProfileHeader[handleSaveProfile]": async ()=>{
                 await updateProfile({
@@ -2550,64 +2557,72 @@ function ProfileHeader() {
                     bio,
                     location,
                     website,
-                    selected_frame: selectedFrame
+                    selected_frame: selectedFrame,
+                    external_stats: {
+                        github_streak: githubStreak,
+                        leetcode_solved: leetcodeSolved,
+                        wakatime_hours: wakatimeHours
+                    }
                 });
                 setIsEditing(false);
             }
         })["ProfileHeader[handleSaveProfile]"];
         $[7] = bio;
-        $[8] = location;
-        $[9] = name;
-        $[10] = selectedFrame;
-        $[11] = updateProfile;
-        $[12] = website;
-        $[13] = t4;
+        $[8] = githubStreak;
+        $[9] = leetcodeSolved;
+        $[10] = location;
+        $[11] = name;
+        $[12] = selectedFrame;
+        $[13] = updateProfile;
+        $[14] = wakatimeHours;
+        $[15] = website;
+        $[16] = t4;
     } else {
-        t4 = $[13];
+        t4 = $[16];
     }
     const handleSaveProfile = t4;
     let t5;
-    if ($[14] !== selectedFrame) {
+    if ($[17] !== selectedFrame) {
         t5 = FRAMES.find({
             "ProfileHeader[FRAMES.find()]": (f)=>f.id === selectedFrame
         }["ProfileHeader[FRAMES.find()]"]) || FRAMES[0];
-        $[14] = selectedFrame;
-        $[15] = t5;
+        $[17] = selectedFrame;
+        $[18] = t5;
     } else {
-        t5 = $[15];
+        t5 = $[18];
     }
     const currentFrame = t5;
     if (loading) {
         let t6;
-        if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
+        if ($[19] === Symbol.for("react.memo_cache_sentinel")) {
             t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "h-64 w-full animate-pulse bg-white/5 rounded-2xl mb-8"
             }, void 0, false, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 142,
+                lineNumber: 157,
                 columnNumber: 12
             }, this);
-            $[16] = t6;
+            $[19] = t6;
         } else {
-            t6 = $[16];
+            t6 = $[19];
         }
         return t6;
     }
     let t6;
-    if ($[17] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[20] === Symbol.for("react.memo_cache_sentinel")) {
         t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "absolute inset-0 bg-black/10"
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 151,
+            lineNumber: 166,
             columnNumber: 10
         }, this);
-        $[17] = t6;
+        $[20] = t6;
     } else {
-        t6 = $[17];
+        t6 = $[20];
     }
     let t7;
-    if ($[18] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[21] === Symbol.for("react.memo_cache_sentinel")) {
         t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "h-48 w-full bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-2xl overflow-hidden relative group",
             children: [
@@ -2618,42 +2633,42 @@ function ProfileHeader() {
                         className: "h-5 w-5"
                     }, void 0, false, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 158,
+                        lineNumber: 173,
                         columnNumber: 290
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 158,
+                    lineNumber: 173,
                     columnNumber: 136
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 158,
+            lineNumber: 173,
             columnNumber: 10
         }, this);
-        $[18] = t7;
+        $[21] = t7;
     } else {
-        t7 = $[18];
+        t7 = $[21];
     }
     const t8 = `absolute -inset-1.5 rounded-full opacity-75 blur animate-pulse group-hover:opacity-100 transition-opacity duration-500 ${currentFrame.class}`;
     let t9;
-    if ($[19] !== t8) {
+    if ($[22] !== t8) {
         t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: t8
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 166,
+            lineNumber: 181,
             columnNumber: 10
         }, this);
-        $[19] = t8;
-        $[20] = t9;
+        $[22] = t8;
+        $[23] = t9;
     } else {
-        t9 = $[20];
+        t9 = $[23];
     }
     let t10;
     let t11;
-    if ($[21] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[24] === Symbol.for("react.memo_cache_sentinel")) {
         t10 = {
             scale: 0.9,
             opacity: 0
@@ -2662,34 +2677,34 @@ function ProfileHeader() {
             scale: 1,
             opacity: 1
         };
-        $[21] = t10;
-        $[22] = t11;
+        $[24] = t10;
+        $[25] = t11;
     } else {
-        t10 = $[21];
-        t11 = $[22];
+        t10 = $[24];
+        t11 = $[25];
     }
     let t12;
-    if ($[23] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[26] === Symbol.for("react.memo_cache_sentinel")) {
         t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/avatar:opacity-100 transition-opacity",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__["Camera"], {
                 className: "h-6 w-6 text-white"
             }, void 0, false, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 191,
+                lineNumber: 206,
                 columnNumber: 150
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 191,
+            lineNumber: 206,
             columnNumber: 11
         }, this);
-        $[23] = t12;
+        $[26] = t12;
     } else {
-        t12 = $[23];
+        t12 = $[26];
     }
     let t13;
-    if ($[24] !== name[0]) {
+    if ($[27] !== name[0]) {
         t13 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
             initial: t10,
             animate: t11,
@@ -2702,35 +2717,35 @@ function ProfileHeader() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 198,
+                lineNumber: 213,
                 columnNumber: 151
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 198,
+            lineNumber: 213,
             columnNumber: 11
         }, this);
-        $[24] = name[0];
-        $[25] = t13;
+        $[27] = name[0];
+        $[28] = t13;
     } else {
-        t13 = $[25];
+        t13 = $[28];
     }
     let t14;
-    if ($[26] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[29] === Symbol.for("react.memo_cache_sentinel")) {
         t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "absolute bottom-2 right-2 h-6 w-6 rounded-full bg-green-500 border-4 border-black z-20",
             title: "Online"
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 206,
+            lineNumber: 221,
             columnNumber: 11
         }, this);
-        $[26] = t14;
+        $[29] = t14;
     } else {
-        t14 = $[26];
+        t14 = $[29];
     }
     let t15;
-    if ($[27] !== t13 || $[28] !== t9) {
+    if ($[30] !== t13 || $[31] !== t9) {
         t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative group",
             children: [
@@ -2740,31 +2755,31 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 213,
+            lineNumber: 228,
             columnNumber: 11
         }, this);
-        $[27] = t13;
-        $[28] = t9;
-        $[29] = t15;
+        $[30] = t13;
+        $[31] = t9;
+        $[32] = t15;
     } else {
-        t15 = $[29];
+        t15 = $[32];
     }
     let t16;
-    if ($[30] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[33] === Symbol.for("react.memo_cache_sentinel")) {
         t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
             className: "px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs border border-primary/20",
             children: "PRO"
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 222,
+            lineNumber: 237,
             columnNumber: 11
         }, this);
-        $[30] = t16;
+        $[33] = t16;
     } else {
-        t16 = $[30];
+        t16 = $[33];
     }
     let t17;
-    if ($[31] !== name) {
+    if ($[34] !== name) {
         t17 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
             className: "text-2xl font-bold text-white flex items-center gap-2",
             children: [
@@ -2773,17 +2788,17 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 229,
+            lineNumber: 244,
             columnNumber: 11
         }, this);
-        $[31] = name;
-        $[32] = t17;
+        $[34] = name;
+        $[35] = t17;
     } else {
-        t17 = $[32];
+        t17 = $[35];
     }
     const t18 = profile?.username || "user";
     let t19;
-    if ($[33] !== t18) {
+    if ($[36] !== t18) {
         t19 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
             className: "text-muted-foreground",
             children: [
@@ -2792,16 +2807,16 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 238,
+            lineNumber: 253,
             columnNumber: 11
         }, this);
-        $[33] = t18;
-        $[34] = t19;
+        $[36] = t18;
+        $[37] = t19;
     } else {
-        t19 = $[34];
+        t19 = $[37];
     }
     let t20;
-    if ($[35] !== t17 || $[36] !== t19) {
+    if ($[38] !== t17 || $[39] !== t19) {
         t20 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             children: [
                 t17,
@@ -2809,30 +2824,30 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 246,
+            lineNumber: 261,
             columnNumber: 11
         }, this);
-        $[35] = t17;
-        $[36] = t19;
-        $[37] = t20;
+        $[38] = t17;
+        $[39] = t19;
+        $[40] = t20;
     } else {
-        t20 = $[37];
+        t20 = $[40];
     }
     let t21;
-    if ($[38] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[41] === Symbol.for("react.memo_cache_sentinel")) {
         t21 = ({
             "ProfileHeader[<button>.onClick]": ()=>{
                 setActiveTab("profile");
                 setIsEditing(true);
             }
         })["ProfileHeader[<button>.onClick]"];
-        $[38] = t21;
+        $[41] = t21;
     } else {
-        t21 = $[38];
+        t21 = $[41];
     }
     let t22;
     let t23;
-    if ($[39] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[42] === Symbol.for("react.memo_cache_sentinel")) {
         t22 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
             onClick: t21,
             className: "px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors font-medium text-sm flex items-center gap-2",
@@ -2841,14 +2856,14 @@ function ProfileHeader() {
                     className: "h-4 w-4"
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 268,
+                    lineNumber: 283,
                     columnNumber: 182
                 }, this),
                 "Edit Profile"
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 268,
+            lineNumber: 283,
             columnNumber: 11
         }, this);
         t23 = ({
@@ -2857,14 +2872,14 @@ function ProfileHeader() {
                 setIsEditing(true);
             }
         })["ProfileHeader[<button>.onClick]"];
-        $[39] = t22;
-        $[40] = t23;
+        $[42] = t22;
+        $[43] = t23;
     } else {
-        t22 = $[39];
-        t23 = $[40];
+        t22 = $[42];
+        t23 = $[43];
     }
     let t24;
-    if ($[41] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[44] === Symbol.for("react.memo_cache_sentinel")) {
         t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex gap-2",
             children: [
@@ -2876,26 +2891,26 @@ function ProfileHeader() {
                         className: "h-5 w-5 text-muted-foreground"
                     }, void 0, false, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 283,
+                        lineNumber: 298,
                         columnNumber: 154
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 283,
+                    lineNumber: 298,
                     columnNumber: 44
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 283,
+            lineNumber: 298,
             columnNumber: 11
         }, this);
-        $[41] = t24;
+        $[44] = t24;
     } else {
-        t24 = $[41];
+        t24 = $[44];
     }
     let t25;
-    if ($[42] !== t20) {
+    if ($[45] !== t20) {
         t25 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex items-center justify-between",
             children: [
@@ -2904,44 +2919,44 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 290,
+            lineNumber: 305,
             columnNumber: 11
         }, this);
-        $[42] = t20;
-        $[43] = t25;
+        $[45] = t20;
+        $[46] = t25;
     } else {
-        t25 = $[43];
+        t25 = $[46];
     }
     let t26;
-    if ($[44] !== bio) {
+    if ($[47] !== bio) {
         t26 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
             className: "mt-3 text-gray-300 max-w-2xl leading-relaxed",
             children: bio
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 298,
+            lineNumber: 313,
             columnNumber: 11
         }, this);
-        $[44] = bio;
-        $[45] = t26;
+        $[47] = bio;
+        $[48] = t26;
     } else {
-        t26 = $[45];
+        t26 = $[48];
     }
     let t27;
-    if ($[46] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[49] === Symbol.for("react.memo_cache_sentinel")) {
         t27 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
             className: "h-4 w-4"
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 306,
+            lineNumber: 321,
             columnNumber: 11
         }, this);
-        $[46] = t27;
+        $[49] = t27;
     } else {
-        t27 = $[46];
+        t27 = $[49];
     }
     let t28;
-    if ($[47] !== location) {
+    if ($[50] !== location) {
         t28 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex items-center gap-1",
             children: [
@@ -2950,22 +2965,22 @@ function ProfileHeader() {
                     children: location
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 313,
+                    lineNumber: 328,
                     columnNumber: 57
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 313,
+            lineNumber: 328,
             columnNumber: 11
         }, this);
-        $[47] = location;
-        $[48] = t28;
+        $[50] = location;
+        $[51] = t28;
     } else {
-        t28 = $[48];
+        t28 = $[51];
     }
     let t29;
-    if ($[49] !== website) {
+    if ($[52] !== website) {
         t29 = website && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex items-center gap-1 hover:text-primary transition-colors cursor-pointer",
             children: [
@@ -2973,29 +2988,29 @@ function ProfileHeader() {
                     className: "h-4 w-4"
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 321,
+                    lineNumber: 336,
                     columnNumber: 115
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     children: website
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 321,
+                    lineNumber: 336,
                     columnNumber: 147
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 321,
+            lineNumber: 336,
             columnNumber: 22
         }, this);
-        $[49] = website;
-        $[50] = t29;
+        $[52] = website;
+        $[53] = t29;
     } else {
-        t29 = $[50];
+        t29 = $[53];
     }
     let t30;
-    if ($[51] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[54] === Symbol.for("react.memo_cache_sentinel")) {
         t30 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex items-center gap-1",
             children: [
@@ -3003,28 +3018,28 @@ function ProfileHeader() {
                     className: "h-4 w-4"
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 329,
+                    lineNumber: 344,
                     columnNumber: 52
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     children: "Joined December 2025"
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 329,
+                    lineNumber: 344,
                     columnNumber: 84
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 329,
+            lineNumber: 344,
             columnNumber: 11
         }, this);
-        $[51] = t30;
+        $[54] = t30;
     } else {
-        t30 = $[51];
+        t30 = $[54];
     }
     let t31;
-    if ($[52] !== t28 || $[53] !== t29) {
+    if ($[55] !== t28 || $[56] !== t29) {
         t31 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex flex-wrap gap-4 mt-4 text-sm text-muted-foreground",
             children: [
@@ -3034,17 +3049,17 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 336,
+            lineNumber: 351,
             columnNumber: 11
         }, this);
-        $[52] = t28;
-        $[53] = t29;
-        $[54] = t31;
+        $[55] = t28;
+        $[56] = t29;
+        $[57] = t31;
     } else {
-        t31 = $[54];
+        t31 = $[57];
     }
     let t32;
-    if ($[55] !== t25 || $[56] !== t26 || $[57] !== t31) {
+    if ($[58] !== t25 || $[59] !== t26 || $[60] !== t31) {
         t32 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex-1 mb-2 w-full",
             children: [
@@ -3054,18 +3069,18 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 345,
+            lineNumber: 360,
             columnNumber: 11
         }, this);
-        $[55] = t25;
-        $[56] = t26;
-        $[57] = t31;
-        $[58] = t32;
+        $[58] = t25;
+        $[59] = t26;
+        $[60] = t31;
+        $[61] = t32;
     } else {
-        t32 = $[58];
+        t32 = $[61];
     }
     let t33;
-    if ($[59] !== t15 || $[60] !== t32) {
+    if ($[62] !== t15 || $[63] !== t32) {
         t33 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex flex-col md:flex-row items-start md:items-end gap-6 -mt-12",
             children: [
@@ -3074,371 +3089,447 @@ function ProfileHeader() {
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 355,
+            lineNumber: 370,
             columnNumber: 11
         }, this);
-        $[59] = t15;
-        $[60] = t32;
-        $[61] = t33;
+        $[62] = t15;
+        $[63] = t32;
+        $[64] = t33;
     } else {
-        t33 = $[61];
+        t33 = $[64];
     }
     let t34;
-    if ($[62] === Symbol.for("react.memo_cache_sentinel")) {
-        t34 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$github$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Github$3e$__["Github"], {
-                    className: "h-5 w-5 text-white"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 364,
-                    columnNumber: 117
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xs text-muted-foreground",
-                            children: "GitHub Streak"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 364,
-                            columnNumber: 163
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "font-bold text-green-400",
-                            children: "128 Days 🔥"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 364,
-                            columnNumber: 225
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 364,
-                    columnNumber: 158
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 364,
-            columnNumber: 11
-        }, this);
-        $[62] = t34;
-    } else {
-        t34 = $[62];
-    }
     let t35;
-    if ($[63] === Symbol.for("react.memo_cache_sentinel")) {
-        t35 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__["Code2"], {
-                    className: "h-5 w-5 text-orange-500"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 371,
-                    columnNumber: 117
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xs text-muted-foreground",
-                            children: "LeetCode"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 371,
-                            columnNumber: 167
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "font-bold text-orange-400",
-                            children: "450 Solved"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 371,
-                            columnNumber: 224
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 371,
-                    columnNumber: 162
-                }, this)
-            ]
-        }, void 0, true, {
+    if ($[65] === Symbol.for("react.memo_cache_sentinel")) {
+        t34 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$github$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Github$3e$__["Github"], {
+            className: "h-5 w-5 text-white"
+        }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 371,
+            lineNumber: 380,
             columnNumber: 11
         }, this);
-        $[63] = t35;
+        t35 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs text-muted-foreground",
+            children: "GitHub Streak"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 381,
+            columnNumber: 11
+        }, this);
+        $[65] = t34;
+        $[66] = t35;
     } else {
-        t35 = $[63];
+        t34 = $[65];
+        t35 = $[66];
     }
-    let t36;
-    if ($[64] === Symbol.for("react.memo_cache_sentinel")) {
-        t36 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "bg-card/30 border border-white/5 rounded-2xl p-4 flex items-center gap-4 overflow-x-auto no-scrollbar",
+    const t36 = githubStreak > 0 ? `${githubStreak} Days 🔥` : "No Data";
+    let t37;
+    if ($[67] !== t36) {
+        t37 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit",
             children: [
                 t34,
-                t35,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$terminal$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Terminal$3e$__["Terminal"], {
-                            className: "h-5 w-5 text-blue-500"
+                        t35,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "font-bold text-green-400",
+                            children: t36
                         }, void 0, false, {
                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 378,
-                            columnNumber: 246
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-xs text-muted-foreground",
-                                    children: "WakaTime"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                    lineNumber: 378,
-                                    columnNumber: 297
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "font-bold text-blue-400",
-                                    children: "45h / week"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                    lineNumber: 378,
-                                    columnNumber: 354
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 378,
-                            columnNumber: 292
+                            lineNumber: 391,
+                            columnNumber: 132
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 378,
-                    columnNumber: 140
+                    lineNumber: 391,
+                    columnNumber: 122
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 378,
+            lineNumber: 391,
             columnNumber: 11
         }, this);
-        $[64] = t36;
+        $[67] = t36;
+        $[68] = t37;
     } else {
-        t36 = $[64];
+        t37 = $[68];
     }
-    const t37 = profile?.hours_focused || 0;
     let t38;
-    if ($[65] !== t37) {
-        t38 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-2xl font-bold text-white",
-            children: t37
-        }, void 0, false, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 386,
-            columnNumber: 11
-        }, this);
-        $[65] = t37;
-        $[66] = t38;
-    } else {
-        t38 = $[66];
-    }
     let t39;
-    if ($[67] === Symbol.for("react.memo_cache_sentinel")) {
-        t39 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-xs text-muted-foreground uppercase tracking-wider",
-            children: "Hours Focused"
+    if ($[69] === Symbol.for("react.memo_cache_sentinel")) {
+        t38 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__["Code2"], {
+            className: "h-5 w-5 text-orange-500"
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 394,
+            lineNumber: 400,
             columnNumber: 11
         }, this);
-        $[67] = t39;
-    } else {
-        t39 = $[67];
-    }
-    let t40;
-    if ($[68] !== t38) {
-        t40 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "text-center",
-            children: [
-                t38,
-                t39
-            ]
-        }, void 0, true, {
+        t39 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs text-muted-foreground",
+            children: "LeetCode"
+        }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
             lineNumber: 401,
             columnNumber: 11
         }, this);
-        $[68] = t38;
-        $[69] = t40;
+        $[69] = t38;
+        $[70] = t39;
     } else {
-        t40 = $[69];
+        t38 = $[69];
+        t39 = $[70];
     }
+    const t40 = leetcodeSolved > 0 ? `${leetcodeSolved} Solved` : "No Data";
     let t41;
-    if ($[70] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[71] !== t40) {
         t41 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "w-px h-8 bg-white/10"
-        }, void 0, false, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 409,
-            columnNumber: 11
-        }, this);
-        $[70] = t41;
-    } else {
-        t41 = $[70];
-    }
-    const t42 = profile?.flows_done || 0;
-    let t43;
-    if ($[71] !== t42) {
-        t43 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-2xl font-bold text-white",
-            children: t42
-        }, void 0, false, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 417,
-            columnNumber: 11
-        }, this);
-        $[71] = t42;
-        $[72] = t43;
-    } else {
-        t43 = $[72];
-    }
-    let t44;
-    if ($[73] === Symbol.for("react.memo_cache_sentinel")) {
-        t44 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-xs text-muted-foreground uppercase tracking-wider",
-            children: "Flows Done"
-        }, void 0, false, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 425,
-            columnNumber: 11
-        }, this);
-        $[73] = t44;
-    } else {
-        t44 = $[73];
-    }
-    let t45;
-    if ($[74] !== t43) {
-        t45 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "text-center",
+            className: "flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit",
             children: [
-                t43,
-                t44
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 432,
-            columnNumber: 11
-        }, this);
-        $[74] = t43;
-        $[75] = t45;
-    } else {
-        t45 = $[75];
-    }
-    let t46;
-    if ($[76] === Symbol.for("react.memo_cache_sentinel")) {
-        t46 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "w-px h-8 bg-white/10"
-        }, void 0, false, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 440,
-            columnNumber: 11
-        }, this);
-        $[76] = t46;
-    } else {
-        t46 = $[76];
-    }
-    let t47;
-    if ($[77] === Symbol.for("react.memo_cache_sentinel")) {
-        t47 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "text-center",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-2xl font-bold text-white",
-                    children: "Top 1%"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 447,
-                    columnNumber: 40
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-xs text-muted-foreground uppercase tracking-wider",
-                    children: "Rank"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 447,
-                    columnNumber: 95
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 447,
-            columnNumber: 11
-        }, this);
-        $[77] = t47;
-    } else {
-        t47 = $[77];
-    }
-    let t48;
-    if ($[78] !== t40 || $[79] !== t45) {
-        t48 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "mt-8 grid grid-cols-1 md:grid-cols-2 gap-4",
-            children: [
-                t36,
+                t38,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-card/30 border border-white/5 rounded-2xl p-4 flex items-center justify-around",
                     children: [
-                        t40,
-                        t41,
-                        t45,
-                        t46,
-                        t47
+                        t39,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "font-bold text-orange-400",
+                            children: t40
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+                            lineNumber: 411,
+                            columnNumber: 132
+                        }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 454,
-                    columnNumber: 76
+                    lineNumber: 411,
+                    columnNumber: 122
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 454,
+            lineNumber: 411,
             columnNumber: 11
         }, this);
-        $[78] = t40;
-        $[79] = t45;
-        $[80] = t48;
+        $[71] = t40;
+        $[72] = t41;
     } else {
-        t48 = $[80];
+        t41 = $[72];
     }
-    let t49;
-    if ($[81] !== t33 || $[82] !== t48) {
-        t49 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "px-6 relative",
+    let t42;
+    let t43;
+    if ($[73] === Symbol.for("react.memo_cache_sentinel")) {
+        t42 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$terminal$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Terminal$3e$__["Terminal"], {
+            className: "h-5 w-5 text-blue-500"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 420,
+            columnNumber: 11
+        }, this);
+        t43 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs text-muted-foreground",
+            children: "WakaTime"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 421,
+            columnNumber: 11
+        }, this);
+        $[73] = t42;
+        $[74] = t43;
+    } else {
+        t42 = $[73];
+        t43 = $[74];
+    }
+    const t44 = wakatimeHours > 0 ? `${wakatimeHours}h / week` : "No Data";
+    let t45;
+    if ($[75] !== t44) {
+        t45 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit",
             children: [
-                t33,
-                t48
+                t42,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: [
+                        t43,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "font-bold text-blue-400",
+                            children: t44
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+                            lineNumber: 431,
+                            columnNumber: 132
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+                    lineNumber: 431,
+                    columnNumber: 122
+                }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 463,
+            lineNumber: 431,
             columnNumber: 11
         }, this);
-        $[81] = t33;
+        $[75] = t44;
+        $[76] = t45;
+    } else {
+        t45 = $[76];
+    }
+    let t46;
+    if ($[77] !== t37 || $[78] !== t41 || $[79] !== t45) {
+        t46 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-card/30 border border-white/5 rounded-2xl p-4 flex items-center gap-4 overflow-x-auto no-scrollbar",
+            children: [
+                t37,
+                t41,
+                t45
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 439,
+            columnNumber: 11
+        }, this);
+        $[77] = t37;
+        $[78] = t41;
+        $[79] = t45;
+        $[80] = t46;
+    } else {
+        t46 = $[80];
+    }
+    const t47 = profile?.hours_focused || 0;
+    let t48;
+    if ($[81] !== t47) {
+        t48 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-2xl font-bold text-white",
+            children: t47
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 450,
+            columnNumber: 11
+        }, this);
+        $[81] = t47;
         $[82] = t48;
+    } else {
+        t48 = $[82];
+    }
+    let t49;
+    if ($[83] === Symbol.for("react.memo_cache_sentinel")) {
+        t49 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs text-muted-foreground uppercase tracking-wider",
+            children: "Hours Focused"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 458,
+            columnNumber: 11
+        }, this);
         $[83] = t49;
     } else {
         t49 = $[83];
     }
     let t50;
-    if ($[84] !== activeTab || $[85] !== bio || $[86] !== handleSaveProfile || $[87] !== handleSignOut || $[88] !== isEditing || $[89] !== location || $[90] !== name || $[91] !== selectedFrame || $[92] !== website) {
-        t50 = isEditing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+    if ($[84] !== t48) {
+        t50 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "text-center",
+            children: [
+                t48,
+                t49
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 465,
+            columnNumber: 11
+        }, this);
+        $[84] = t48;
+        $[85] = t50;
+    } else {
+        t50 = $[85];
+    }
+    let t51;
+    if ($[86] === Symbol.for("react.memo_cache_sentinel")) {
+        t51 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "w-px h-8 bg-white/10"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 473,
+            columnNumber: 11
+        }, this);
+        $[86] = t51;
+    } else {
+        t51 = $[86];
+    }
+    const t52 = profile?.flows_done || 0;
+    let t53;
+    if ($[87] !== t52) {
+        t53 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-2xl font-bold text-white",
+            children: t52
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 481,
+            columnNumber: 11
+        }, this);
+        $[87] = t52;
+        $[88] = t53;
+    } else {
+        t53 = $[88];
+    }
+    let t54;
+    if ($[89] === Symbol.for("react.memo_cache_sentinel")) {
+        t54 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs text-muted-foreground uppercase tracking-wider",
+            children: "Flows Done"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 489,
+            columnNumber: 11
+        }, this);
+        $[89] = t54;
+    } else {
+        t54 = $[89];
+    }
+    let t55;
+    if ($[90] !== t53) {
+        t55 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "text-center",
+            children: [
+                t53,
+                t54
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 496,
+            columnNumber: 11
+        }, this);
+        $[90] = t53;
+        $[91] = t55;
+    } else {
+        t55 = $[91];
+    }
+    let t56;
+    if ($[92] === Symbol.for("react.memo_cache_sentinel")) {
+        t56 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "w-px h-8 bg-white/10"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 504,
+            columnNumber: 11
+        }, this);
+        $[92] = t56;
+    } else {
+        t56 = $[92];
+    }
+    const t57 = (profile?.rank_score || 0) > 1000 ? "Master" : (profile?.rank_score || 0) > 500 ? "Pro" : "Rookie";
+    let t58;
+    if ($[93] !== t57) {
+        t58 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-2xl font-bold text-white",
+            children: t57
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 512,
+            columnNumber: 11
+        }, this);
+        $[93] = t57;
+        $[94] = t58;
+    } else {
+        t58 = $[94];
+    }
+    let t59;
+    if ($[95] === Symbol.for("react.memo_cache_sentinel")) {
+        t59 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs text-muted-foreground uppercase tracking-wider",
+            children: "Rank"
+        }, void 0, false, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 520,
+            columnNumber: 11
+        }, this);
+        $[95] = t59;
+    } else {
+        t59 = $[95];
+    }
+    let t60;
+    if ($[96] !== t58) {
+        t60 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "text-center",
+            children: [
+                t58,
+                t59
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 527,
+            columnNumber: 11
+        }, this);
+        $[96] = t58;
+        $[97] = t60;
+    } else {
+        t60 = $[97];
+    }
+    let t61;
+    if ($[98] !== t50 || $[99] !== t55 || $[100] !== t60) {
+        t61 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-card/30 border border-white/5 rounded-2xl p-4 flex items-center justify-around",
+            children: [
+                t50,
+                t51,
+                t55,
+                t56,
+                t60
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 535,
+            columnNumber: 11
+        }, this);
+        $[98] = t50;
+        $[99] = t55;
+        $[100] = t60;
+        $[101] = t61;
+    } else {
+        t61 = $[101];
+    }
+    let t62;
+    if ($[102] !== t46 || $[103] !== t61) {
+        t62 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "mt-8 grid grid-cols-1 md:grid-cols-2 gap-4",
+            children: [
+                t46,
+                t61
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 545,
+            columnNumber: 11
+        }, this);
+        $[102] = t46;
+        $[103] = t61;
+        $[104] = t62;
+    } else {
+        t62 = $[104];
+    }
+    let t63;
+    if ($[105] !== t33 || $[106] !== t62) {
+        t63 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "px-6 relative",
+            children: [
+                t33,
+                t62
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/profile/ProfileHeader.tsx",
+            lineNumber: 554,
+            columnNumber: 11
+        }, this);
+        $[105] = t33;
+        $[106] = t62;
+        $[107] = t63;
+    } else {
+        t63 = $[107];
+    }
+    let t64;
+    if ($[108] !== activeTab || $[109] !== bio || $[110] !== handleSaveProfile || $[111] !== handleSignOut || $[112] !== isEditing || $[113] !== location || $[114] !== name || $[115] !== selectedFrame || $[116] !== website) {
+        t64 = isEditing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
             initial: {
                 opacity: 0
             },
@@ -3476,7 +3567,7 @@ function ProfileHeader() {
                                 children: "Settings"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 489,
+                                lineNumber: 580,
                                 columnNumber: 281
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3489,14 +3580,14 @@ function ProfileHeader() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 491,
+                                        lineNumber: 582,
                                         columnNumber: 242
                                     }, this),
                                     " Edit Profile"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 489,
+                                lineNumber: 580,
                                 columnNumber: 338
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3509,14 +3600,14 @@ function ProfileHeader() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 493,
+                                        lineNumber: 584,
                                         columnNumber: 241
                                     }, this),
                                     " Frames & Decor"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 491,
+                                lineNumber: 582,
                                 columnNumber: 292
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3529,20 +3620,20 @@ function ProfileHeader() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 495,
+                                        lineNumber: 586,
                                         columnNumber: 242
                                     }, this),
                                     " Account"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 493,
+                                lineNumber: 584,
                                 columnNumber: 301
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 489,
+                        lineNumber: 580,
                         columnNumber: 189
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3560,7 +3651,7 @@ function ProfileHeader() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 495,
+                                        lineNumber: 586,
                                         columnNumber: 395
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3572,18 +3663,18 @@ function ProfileHeader() {
                                             className: "h-5 w-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                            lineNumber: 497,
+                                            lineNumber: 588,
                                             columnNumber: 98
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 495,
+                                        lineNumber: 586,
                                         columnNumber: 574
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 495,
+                                lineNumber: 586,
                                 columnNumber: 339
                             }, this),
                             activeTab === "profile" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3596,7 +3687,7 @@ function ProfileHeader() {
                                                 children: "Display Name"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 497,
+                                                lineNumber: 588,
                                                 columnNumber: 198
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3607,13 +3698,13 @@ function ProfileHeader() {
                                                 className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 497,
+                                                lineNumber: 588,
                                                 columnNumber: 278
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 497,
+                                        lineNumber: 588,
                                         columnNumber: 193
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3623,7 +3714,7 @@ function ProfileHeader() {
                                                 children: "Bio"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 499,
+                                                lineNumber: 590,
                                                 columnNumber: 183
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -3634,13 +3725,13 @@ function ProfileHeader() {
                                                 className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none h-24 resize-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 499,
+                                                lineNumber: 590,
                                                 columnNumber: 254
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 499,
+                                        lineNumber: 590,
                                         columnNumber: 178
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3653,7 +3744,7 @@ function ProfileHeader() {
                                                         children: "Location"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 501,
+                                                        lineNumber: 592,
                                                         columnNumber: 243
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3664,13 +3755,13 @@ function ProfileHeader() {
                                                         className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 501,
+                                                        lineNumber: 592,
                                                         columnNumber: 319
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 501,
+                                                lineNumber: 592,
                                                 columnNumber: 238
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3680,7 +3771,7 @@ function ProfileHeader() {
                                                         children: "Website"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 503,
+                                                        lineNumber: 594,
                                                         columnNumber: 185
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3691,19 +3782,19 @@ function ProfileHeader() {
                                                         className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 503,
+                                                        lineNumber: 594,
                                                         columnNumber: 260
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 503,
+                                                lineNumber: 594,
                                                 columnNumber: 180
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 501,
+                                        lineNumber: 592,
                                         columnNumber: 198
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3712,13 +3803,13 @@ function ProfileHeader() {
                                         children: "Save Changes"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 505,
+                                        lineNumber: 596,
                                         columnNumber: 186
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 497,
+                                lineNumber: 588,
                                 columnNumber: 166
                             }, this),
                             activeTab === "frames" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3738,7 +3829,7 @@ function ProfileHeader() {
                                                                 className: `absolute -inset-1 rounded-full opacity-75 blur ${frame.class}`
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 508,
+                                                                lineNumber: 599,
                                                                 columnNumber: 306
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3747,18 +3838,18 @@ function ProfileHeader() {
                                                                     className: `h-6 w-6 ${frame.color}`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                    lineNumber: 508,
+                                                                    lineNumber: 599,
                                                                     columnNumber: 507
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 508,
+                                                                lineNumber: 599,
                                                                 columnNumber: 389
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 508,
+                                                        lineNumber: 599,
                                                         columnNumber: 280
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3769,7 +3860,7 @@ function ProfileHeader() {
                                                                 children: frame.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 508,
+                                                                lineNumber: 599,
                                                                 columnNumber: 599
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3777,19 +3868,19 @@ function ProfileHeader() {
                                                                 children: "Unlocked"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 508,
+                                                                lineNumber: 599,
                                                                 columnNumber: 648
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 508,
+                                                        lineNumber: 599,
                                                         columnNumber: 570
                                                     }, this)
                                                 ]
                                             }, frame.id, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 506,
+                                                lineNumber: 597,
                                                 columnNumber: 55
                                             }, this)
                                     }["ProfileHeader[FRAMES.map()]"]),
@@ -3799,13 +3890,13 @@ function ProfileHeader() {
                                         children: "Apply Frame"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 509,
+                                        lineNumber: 600,
                                         columnNumber: 47
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 505,
+                                lineNumber: 596,
                                 columnNumber: 387
                             }, this),
                             activeTab === "account" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3818,7 +3909,7 @@ function ProfileHeader() {
                                             children: "Danger Zone"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                            lineNumber: 509,
+                                            lineNumber: 600,
                                             columnNumber: 357
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3826,7 +3917,7 @@ function ProfileHeader() {
                                             children: "Sign out of your account on this device."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                            lineNumber: 509,
+                                            lineNumber: 600,
                                             columnNumber: 417
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3837,94 +3928,94 @@ function ProfileHeader() {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 509,
+                                                    lineNumber: 600,
                                                     columnNumber: 669
                                                 }, this),
                                                 "Sign Out"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                            lineNumber: 509,
+                                            lineNumber: 600,
                                             columnNumber: 511
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                    lineNumber: 509,
+                                    lineNumber: 600,
                                     columnNumber: 286
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 509,
+                                lineNumber: 600,
                                 columnNumber: 259
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 495,
+                        lineNumber: 586,
                         columnNumber: 295
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 480,
+                lineNumber: 571,
                 columnNumber: 47
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 472,
+            lineNumber: 563,
             columnNumber: 24
         }, this);
-        $[84] = activeTab;
-        $[85] = bio;
-        $[86] = handleSaveProfile;
-        $[87] = handleSignOut;
-        $[88] = isEditing;
-        $[89] = location;
-        $[90] = name;
-        $[91] = selectedFrame;
-        $[92] = website;
-        $[93] = t50;
+        $[108] = activeTab;
+        $[109] = bio;
+        $[110] = handleSaveProfile;
+        $[111] = handleSignOut;
+        $[112] = isEditing;
+        $[113] = location;
+        $[114] = name;
+        $[115] = selectedFrame;
+        $[116] = website;
+        $[117] = t64;
     } else {
-        t50 = $[93];
+        t64 = $[117];
     }
-    let t51;
-    if ($[94] !== t50) {
-        t51 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-            children: t50
+    let t65;
+    if ($[118] !== t64) {
+        t65 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+            children: t64
         }, void 0, false, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 525,
+            lineNumber: 616,
             columnNumber: 11
         }, this);
-        $[94] = t50;
-        $[95] = t51;
+        $[118] = t64;
+        $[119] = t65;
     } else {
-        t51 = $[95];
+        t65 = $[119];
     }
-    let t52;
-    if ($[96] !== t49 || $[97] !== t51) {
-        t52 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    let t66;
+    if ($[120] !== t63 || $[121] !== t65) {
+        t66 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative mb-8",
             children: [
                 t7,
-                t49,
-                t51
+                t63,
+                t65
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-            lineNumber: 533,
+            lineNumber: 624,
             columnNumber: 11
         }, this);
-        $[96] = t49;
-        $[97] = t51;
-        $[98] = t52;
+        $[120] = t63;
+        $[121] = t65;
+        $[122] = t66;
     } else {
-        t52 = $[98];
+        t66 = $[122];
     }
-    return t52;
+    return t66;
 }
-_s(ProfileHeader, "PwJl5UtaXKQ+9ihMdQAT6NZYrbs=", false, function() {
+_s(ProfileHeader, "Jm8Gy7lq8KBBIAAycx9Eztnoo6w=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useProfile$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useProfile"]

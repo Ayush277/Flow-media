@@ -1,3 +1,5 @@
+"use client";
+
 import { CommentDrawer } from "@/components/feed/CommentDrawer";
 import { useFollow } from "@/hooks/useFollow";
 import { createClient } from "@/lib/supabase/client";
@@ -128,8 +130,24 @@ export function FeedPost({ id, userId, currentUserId, user, timestamp, content, 
                         <div className="flex-1 min-w-0">
                             {/* Header */}
                             <div className="flex justify-between items-start mb-3">
-                                <div>
-                                    <h3 className="font-bold text-white text-lg leading-tight mb-0.5 hover:text-primary transition-colors cursor-pointer">{user.name}</h3>
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2">
+                                        <h3 className="font-bold text-white text-lg leading-tight mb-0.5 hover:text-primary transition-colors cursor-pointer">{user.name}</h3>
+                                        {!isOwner && (
+                                            <button
+                                                onClick={toggleFollow}
+                                                disabled={isFollowLoading}
+                                                className={cn(
+                                                    "text-xs font-bold px-2 py-0.5 rounded-full transition-all border",
+                                                    isFollowing
+                                                        ? "border-white/20 text-muted-foreground hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20"
+                                                        : "bg-primary/10 text-primary border-primary/20 hover:bg-primary/20"
+                                                )}
+                                            >
+                                                {isFollowing ? "Following" : "Follow"}
+                                            </button>
+                                        )}
+                                    </div>
                                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                         <span className="hover:text-white transition-colors cursor-pointer">@{user.handle}</span>
                                         <span className="w-1 h-1 rounded-full bg-white/20" />

@@ -2,8 +2,9 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { AnimatePresence, motion } from "framer-motion";
-import { Plus, UploadCloud, X } from "lucide-react";
+import { Plus, Upload, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
 // Types
 type StoryType = 'image' | 'text';
@@ -232,9 +233,10 @@ export function StoriesSection() {
       await fetchStories();
       setIsCreating(false);
       resetCreation();
+      toast.success("Story added!");
     } catch (error) {
       console.error("Error posting story:", error);
-      alert("Failed to post story");
+      toast.error("Failed to post story");
     } finally {
       setIsUploading(false);
     }
@@ -381,7 +383,7 @@ export function StoriesSection() {
                         className="flex flex-col items-center justify-center gap-4 cursor-pointer p-12 rounded-3xl border-2 border-dashed border-white/10 hover:border-white/30 hover:bg-white/5 transition-all w-3/4 aspect-square max-h-[400px]"
                       >
                         <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center">
-                          <UploadCloud className="w-10 h-10 text-primary" />
+                          <Upload className="w-10 h-10 text-primary" />
                         </div>
                         <div className="text-center">
                           <h3 className="text-lg font-bold">Upload Photo</h3>

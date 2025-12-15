@@ -269,6 +269,7 @@
     --color-card: var(--card);
     --color-primary: var(--primary);
     --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
     --color-border: var(--border);
   }
@@ -2064,6 +2065,10 @@
     }
   }
 
+  .bg-muted {
+    background-color: var(--color-muted);
+  }
+
   .bg-neutral-800 {
     background-color: var(--color-neutral-800);
   }
@@ -3678,6 +3683,18 @@
   }
 
   @media (hover: hover) {
+    .hover\:border-red-500\/20:hover {
+      border-color: #fb2c3633;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:border-red-500\/20:hover {
+        border-color: color-mix(in oklab, var(--color-red-500) 20%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:border-white\/5:hover {
       border-color: #ffffff0d;
     }
@@ -3823,6 +3840,18 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:bg-primary\/10:hover {
         background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-primary\/20:hover {
+      background-color: var(--color-primary);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-primary\/20:hover {
+        background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
       }
     }
   }

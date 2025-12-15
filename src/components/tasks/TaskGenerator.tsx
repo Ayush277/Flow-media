@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Layout, List, Loader2, Minimize2, Play, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import { Task, TaskItem } from "./TaskItem";
 
 export function TaskGenerator() {
@@ -101,7 +102,7 @@ export function TaskGenerator() {
         try {
             const { data: { user } } = await supabase.auth.getUser();
             if (!user) {
-                alert("Please login to commit tasks");
+                toast.error("Please login to commit tasks");
                 return;
             }
 
@@ -134,11 +135,12 @@ export function TaskGenerator() {
 
             // Success
             setGeneratedTasks([]);
+            toast.success("Tasks committed to public feed!");
             router.push('/feed');
 
         } catch (error) {
             console.error("Error committing tasks:", error);
-            alert("Failed to commit tasks. Please try again.");
+            toast.error("Failed to commit tasks. Please try again.");
         } finally {
             setIsCommitting(false);
         }

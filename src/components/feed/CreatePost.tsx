@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Image as ImageIcon, Loader2, Send, X } from "lucide-react";
 import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 export function CreatePost({ onPostCreated }: { onPostCreated?: () => void }) {
     const [content, setContent] = useState("");
@@ -77,10 +78,11 @@ export function CreatePost({ onPostCreated }: { onPostCreated?: () => void }) {
             setContent("");
             removeImage();
             if (onPostCreated) onPostCreated();
+            toast.success("Flow posted successfully!");
 
         } catch (error) {
             console.error("Error creating post:", error);
-            alert("Failed to post. Please try again.");
+            toast.error("Failed to post. Please try again.");
         } finally {
             setIsSubmitting(false);
         }

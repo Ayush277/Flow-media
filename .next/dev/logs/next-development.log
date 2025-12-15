@@ -5358,3 +5358,2180 @@ Import trace:
     ./src/hooks/useFollow.ts
     ./src/components/feed/FeedPost.tsx
     ./src/app/(main)/profile/page.tsx
+[00:33:07.752] Server  LOG      ✓ Compiled in 166ms
+[00:33:07.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:07.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:07.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:07.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:09.814] Server  LOG      ✓ Compiled in 123ms
+[00:33:09.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:09.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:09.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:09.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:21.934] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:21.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:21.935] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:33:21.935] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:12.102] Server  LOG      ✓ Compiled in 392ms
+[00:34:12.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:12.936] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:12.936] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:12.936] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:32.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:32.936] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:32.936] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:32.936] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:53.314] Server  LOG      ✓ Compiled in 958ms
+[00:34:53.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:53.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:53.935] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:53.935] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:56.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:56.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:56.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:34:56.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:14.931] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:14.931] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:14.931] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:14.931] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:25.385] Server  LOG      ✓ Compiled in 252ms
+[00:35:25.946] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:25.946] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:25.946] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:25.946] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:27.111] Server  LOG      ✓ Compiled in 583ms
+[00:35:27.936] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:27.936] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:27.936] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:27.936] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:38.951] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:38.953] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:38.954] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:38.954] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:40.934] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:40.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:40.935] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:40.935] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:42.937] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:42.938] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:42.938] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:42.938] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:51.939] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:51.939] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:51.939] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:51.939] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:53.951] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:53.952] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:53.953] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:53.953] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:54.937] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:54.939] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:54.939] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:54.939] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:56.935] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:56.936] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:56.936] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:35:56.936] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:12.938] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:12.938] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:12.939] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:12.939] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:13.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:13.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:13.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:13.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:35.939] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:35.940] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:35.940] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:35.940] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:49.933] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:51.978] Server  LOG      ✓ Compiled in 83ms
+[00:36:52.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:52.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:54.933] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:54.933] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:54.933] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:54.933] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:55.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:55.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:55.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:55.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:56.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:56.932] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:56.932] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:36:56.932] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.112] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.112] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.112] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.112] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:31.972] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.972] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.973] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:31.973] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:32.313] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:10
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |          ^^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:32.313] Browser ERROR   ./src/components/feed/FeedPost.tsx:7:21
+Ecmascript file had an error
+   5 | import { motion } from "framer-motion";
+   6 | import { CheckCircle2, Heart, MessageCircle, MoreHorizontal, Share2, Zap } from "lucide-react";
+>  7 | import { useEffect, useState } from "react";
+     |                     ^^^^^^^^
+   8 |
+   9 | interface Task {
+  10 |     id: string;
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:32.313] Browser ERROR   ./src/hooks/useFollow.ts:2:23
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                       ^^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:37:32.313] Browser ERROR   ./src/hooks/useFollow.ts:2:34
+Ecmascript file had an error
+  1 | import { createClient } from '@/lib/supabase/client';
+> 2 | import { useCallback, useEffect, useState } from 'react';
+    |                                  ^^^^^^^^
+  3 |
+  4 | export function useFollow(targetUserId: string, currentUserId?: string) {
+  5 |     const [isFollowing, setIsFollowing] = useState(false);
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/hooks/useFollow.ts
+    ./src/components/feed/FeedPost.tsx
+    ./src/app/(main)/profile/page.tsx
+[00:38:02.351] Server  LOG      ✓ Compiled in 266ms
+[00:38:36.812] Server  LOG      ✓ Compiled in 212ms
+[00:38:38.090] Server  LOG      ✓ Compiled in 46ms
+[00:38:39.661] Server  LOG      ✓ Compiled in 36ms
+[00:38:41.308] Browser ERROR   Error creating post: {"code":"23503","details":"Key is not present in table \"profiles\".","hint":null,"message":"insert or update on table \"posts\" violates foreign key constraint \"posts_user_id_fkey\""}
+[00:38:57.582] Browser ERROR   Error updating profile: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'external_stats' column of 'profiles' in the schema cache"}
+[00:38:58.066] Browser ERROR   Error updating profile: {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'external_stats' column of 'profiles' in the schema cache"}
+[00:39:11.196] Browser ERROR   Error fetching comments: {"code":"22P02","details":null,"hint":null,"message":"invalid input syntax for type uuid: \"p2\""}
+[00:39:28.241] Browser ERROR   Error posting story: {"code":"23503","details":"Key is not present in table \"profiles\".","hint":null,"message":"insert or update on table \"stories\" violates foreign key constraint \"stories_user_id_fkey\""}

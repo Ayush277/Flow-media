@@ -25,19 +25,19 @@ This document tracks the features and improvements required to transition Flow M
 - [x] **Real-time**: Listen for new likes/comments on a post.
 
 ### 4. Graph (Follow System)
-- [ ] **Database Schema**: Create `follows` table.
-- [ ] **Follow Logic**: Ability to follow/unfollow users from their profile or feed.
-- [ ] **Feed Filtering**: "Following" tab only shows posts from followed users.
+- [x] **Database Schema**: Create `follows` table.
+- [x] **Follow Logic**: Ability to follow/unfollow users from their profile or feed.
+- [x] **Feed Filtering**: "Following" tab only shows posts from followed users.
 
 ---
 
 ## 🔴 Phase 3: Gamification & Polish
 
 ### 5. True Gamification
-- [ ] **Dynamic Stats**: Remove hardcoded "128 Days" streaks; connect to real data or logic.
-- [ ] **Ranking System**: Implement basic ranking logic based on 'hours_focused'.
+- [x] **Dynamic Stats**: Remove hardcoded "128 Days" streaks; connect to real data or logic.
+- [x] **Ranking System**: Implement basic ranking logic based on 'hours_focused'.
 
 ### 6. UX Polish
 - [ ] **Infinite Scroll**: Replace simple list with infinite loading to handle many posts.
-- [ ] **Toast Notifications**: Replace browser `alert()` with specific toast UI (e.g., "Post created!").
-- [ ] **Loading States**: Add skeleton screens for smoother data fetching.
+- [x] **Toast Notifications**: Replace browser `alert()` with specific toast UI (e.g., "Post created!").
+- [x] **Loading States**: Add skeleton screens for smoother data fetching.

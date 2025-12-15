@@ -889,11 +889,31 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                             className: "flex justify-between items-start mb-3",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex-1",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "font-bold text-white text-lg leading-tight mb-0.5 hover:text-primary transition-colors cursor-pointer",
-                                                            children: user.name
-                                                        }, void 0, false, {
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                    className: "font-bold text-white text-lg leading-tight mb-0.5 hover:text-primary transition-colors cursor-pointer",
+                                                                    children: user.name
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/feed/FeedPost.tsx",
+                                                                    lineNumber: 133,
+                                                                    columnNumber: 41
+                                                                }, this),
+                                                                !isOwner && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    onClick: toggleFollow,
+                                                                    disabled: isFollowLoading,
+                                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("text-xs font-bold px-2 py-0.5 rounded-full transition-all border", isFollowing ? "border-white/20 text-muted-foreground hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20" : "bg-primary/10 text-primary border-primary/20 hover:bg-primary/20"),
+                                                                    children: isFollowing ? "Following" : "Follow"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/feed/FeedPost.tsx",
+                                                                    lineNumber: 135,
+                                                                    columnNumber: 45
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
                                                             lineNumber: 132,
                                                             columnNumber: 37
@@ -909,27 +929,27 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 150,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "w-1 h-1 rounded-full bg-white/20"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                    lineNumber: 135,
+                                                                    lineNumber: 151,
                                                                     columnNumber: 41
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: timestamp
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 152,
                                                                     columnNumber: 41
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 133,
+                                                            lineNumber: 149,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
@@ -944,12 +964,12 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                        lineNumber: 140,
+                                                        lineNumber: 156,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 155,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
@@ -963,7 +983,7 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                             children: content
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 161,
                                             columnNumber: 29
                                         }, this),
                                         tasks.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -976,7 +996,7 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                             className: "h-3.5 w-3.5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 169,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -984,13 +1004,13 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                             children: "Flow Session"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 154,
+                                                            lineNumber: 170,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 168,
                                                     columnNumber: 37
                                                 }, this),
                                                 tasks.map((task, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1002,18 +1022,18 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                                     className: "h-3.5 w-3.5 text-primary"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                    lineNumber: 167,
+                                                                    lineNumber: 183,
                                                                     columnNumber: 53
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                lineNumber: 166,
+                                                                lineNumber: 182,
                                                                 columnNumber: 49
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "h-5 w-5 rounded-full border-2 border-white/20 group-hover/task:border-white/40 transition-colors shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                lineNumber: 170,
+                                                                lineNumber: 186,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1021,19 +1041,19 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                                 children: task.text
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                lineNumber: 172,
+                                                                lineNumber: 188,
                                                                 columnNumber: 45
                                                             }, this)
                                                         ]
                                                     }, task.id, true, {
                                                         fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                        lineNumber: 157,
+                                                        lineNumber: 173,
                                                         columnNumber: 41
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 167,
                                             columnNumber: 33
                                         }, this),
                                         image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1043,7 +1063,7 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                     className: "absolute inset-0 bg-black/20 group-hover/image:bg-transparent transition-colors duration-500 z-10"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 183,
+                                                    lineNumber: 199,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -1052,13 +1072,13 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                     className: "w-full h-auto max-h-[500px] object-cover transform group-hover/image:scale-105 transition-transform duration-700 ease-out"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 184,
+                                                    lineNumber: 200,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                            lineNumber: 182,
+                                            lineNumber: 198,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1079,12 +1099,12 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("h-4 w-4 transition-transform group-hover:scale-110", isLiked && "fill-current")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                                lineNumber: 207,
+                                                                lineNumber: 223,
                                                                 columnNumber: 41
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 206,
+                                                            lineNumber: 222,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1092,13 +1112,13 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                             children: likeCount
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 209,
+                                                            lineNumber: 225,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 194,
+                                                    lineNumber: 210,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1109,7 +1129,7 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                             className: "h-4 w-4 group-hover:scale-110 transition-transform"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 216,
+                                                            lineNumber: 232,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1117,13 +1137,13 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                             children: stats.comments
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                            lineNumber: 217,
+                                                            lineNumber: 233,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 228,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1132,18 +1152,18 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                                                         className: "h-4 w-4 group-hover:scale-110 transition-transform"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                        lineNumber: 221,
+                                                        lineNumber: 237,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                                    lineNumber: 220,
+                                                    lineNumber: 236,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/feed/FeedPost.tsx",
-                                            lineNumber: 193,
+                                            lineNumber: 209,
                                             columnNumber: 29
                                         }, this)
                                     ]
@@ -1178,7 +1198,7 @@ function FeedPost({ id, userId, currentUserId, user, timestamp, content, tasks, 
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/feed/FeedPost.tsx",
-                lineNumber: 229,
+                lineNumber: 245,
                 columnNumber: 13
             }, this)
         ]
@@ -2087,12 +2107,14 @@ function FeedPage() {
     const [posts, setPosts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const [currentUserId, setCurrentUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(undefined);
+    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('foryou');
     const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createClient"])();
     const fetchPosts = async ()=>{
+        setLoading(true);
         try {
             const { data: { user } } = await supabase.auth.getUser();
             if (user) setCurrentUserId(user.id);
-            const { data, error } = await supabase.from('posts').select(`
+            let query = supabase.from('posts').select(`
                     *,
                     profiles (full_name, username, avatar_url),
                     tasks (id, text, is_completed),
@@ -2101,6 +2123,20 @@ function FeedPage() {
                 `).order('created_at', {
                 ascending: false
             });
+            if (activeTab === 'following' && user) {
+                // Fetch followings first
+                const { data: follows } = await supabase.from('follows').select('following_id').eq('follower_id', user.id);
+                const followingIds = follows?.map((f)=>f.following_id) || [];
+                if (followingIds.length > 0) {
+                    query = query.in('user_id', followingIds);
+                } else {
+                    // Following no one, return empty
+                    setPosts([]);
+                    setLoading(false);
+                    return;
+                }
+            }
+            const { data, error } = await query;
             if (error) throw error;
             // @ts-ignore
             setPosts(data || []);
@@ -2122,7 +2158,9 @@ function FeedPage() {
         return ()=>{
             supabase.removeChannel(channel);
         };
-    }, []);
+    }, [
+        activeTab
+    ]); // Refetch when tab changes
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full pb-20",
         children: [
@@ -2132,42 +2170,44 @@ function FeedPage() {
                     className: "flex gap-6",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "text-white font-bold text-lg border-b-2 border-primary pb-1",
+                            onClick: ()=>setActiveTab('foryou'),
+                            className: `font-bold text-lg pb-1 transition-colors ${activeTab === 'foryou' ? 'text-white border-b-2 border-primary' : 'text-muted-foreground hover:text-white'}`,
                             children: "For You"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/feed/page.tsx",
-                            lineNumber: 80,
+                            lineNumber: 103,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "text-muted-foreground font-medium text-lg hover:text-white transition-colors pb-1",
+                            onClick: ()=>setActiveTab('following'),
+                            className: `font-bold text-lg pb-1 transition-colors ${activeTab === 'following' ? 'text-white border-b-2 border-primary' : 'text-muted-foreground hover:text-white'}`,
                             children: "Following"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/feed/page.tsx",
-                            lineNumber: 81,
+                            lineNumber: 109,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(main)/feed/page.tsx",
-                    lineNumber: 79,
+                    lineNumber: 102,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/feed/page.tsx",
-                lineNumber: 78,
+                lineNumber: 101,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$feed$2f$StoriesSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StoriesSection"], {}, void 0, false, {
                 fileName: "[project]/src/app/(main)/feed/page.tsx",
-                lineNumber: 85,
+                lineNumber: 118,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$feed$2f$CreatePost$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CreatePost"], {
                 onPostCreated: fetchPosts
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/feed/page.tsx",
-                lineNumber: 87,
+                lineNumber: 120,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2178,15 +2218,17 @@ function FeedPage() {
                         className: "h-8 w-8 animate-spin text-primary"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(main)/feed/page.tsx",
-                        lineNumber: 92,
+                        lineNumber: 125,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(main)/feed/page.tsx",
-                    lineNumber: 91,
+                    lineNumber: 124,
                     columnNumber: 21
                 }, this) : posts.length > 0 ? posts.map((post)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$feed$2f$FeedPost$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FeedPost"], {
                         id: post.id,
+                        userId: // @ts-ignore
+                        post.user_id,
                         currentUserId: currentUserId,
                         user: {
                             name: post.profiles?.full_name || 'Unknown User',
@@ -2209,7 +2251,7 @@ function FeedPage() {
                         }
                     }, post.id, false, {
                         fileName: "[project]/src/app/(main)/feed/page.tsx",
-                        lineNumber: 96,
+                        lineNumber: 129,
                         columnNumber: 25
                     }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "text-center py-20 px-4",
@@ -2220,45 +2262,45 @@ function FeedPage() {
                                 className: "h-8 w-8 text-muted-foreground"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(main)/feed/page.tsx",
-                                lineNumber: 120,
+                                lineNumber: 157,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/feed/page.tsx",
-                            lineNumber: 119,
+                            lineNumber: 156,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                             className: "text-xl font-bold text-white mb-2",
-                            children: "No flows yet"
+                            children: activeTab === 'following' ? "No following posts" : "No flows yet"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/feed/page.tsx",
-                            lineNumber: 122,
+                            lineNumber: 159,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-muted-foreground max-w-sm mx-auto",
-                            children: "Be the first to share your daily flow! Use the input above to create a post."
+                            children: activeTab === 'following' ? "Follow some creators to see their flows here." : "Be the first to share your daily flow! Use the input above to create a post."
                         }, void 0, false, {
                             fileName: "[project]/src/app/(main)/feed/page.tsx",
-                            lineNumber: 123,
+                            lineNumber: 162,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(main)/feed/page.tsx",
-                    lineNumber: 118,
+                    lineNumber: 155,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(main)/feed/page.tsx",
-                lineNumber: 89,
+                lineNumber: 122,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/(main)/feed/page.tsx",
-        lineNumber: 77,
+        lineNumber: 100,
         columnNumber: 9
     }, this);
 }

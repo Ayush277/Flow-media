@@ -7,6 +7,7 @@ import { ProfileHeader } from "@/components/profile/ProfileHeader";
 const ALL_POSTS = [
     {
         id: "p1",
+        userId: "u1",
         user: { name: "Ayush Kumar", handle: "ayush_builds", avatar: "A" },
         timestamp: "2h ago",
         content: "Just hit a 128 day streak on GitHub! 🚀 Consistency is the key to mastery. #coding #productivity",
@@ -15,6 +16,7 @@ const ALL_POSTS = [
     },
     {
         id: "p2",
+        userId: "u1",
         user: { name: "Ayush Kumar", handle: "ayush_builds", avatar: "A" },
         timestamp: "Yesterday",
         content: "Crushed the backend integration today! 🚀\n\nFinally connected the Supabase auth with the new flow engine.",
@@ -27,6 +29,7 @@ const ALL_POSTS = [
     },
     {
         id: "p3",
+        userId: "u1",
         user: { name: "Ayush Kumar", handle: "ayush_builds", avatar: "A" },
         timestamp: "2 days ago",
         content: "Learning Rust has been a humbling experience. The borrow checker is my new best friend (and worst enemy). 🦀",

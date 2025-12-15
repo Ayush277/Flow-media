@@ -1852,6 +1852,10 @@ function ProfileHeader() {
     const [location, setLocation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [website, setWebsite] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [selectedFrame, setSelectedFrame] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('default');
+    // Stats state
+    const [githubStreak, setGithubStreak] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [leetcodeSolved, setLeetcodeSolved] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [wakatimeHours, setWakatimeHours] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
     // Sync profile data when loaded
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (profile) {
@@ -1860,6 +1864,11 @@ function ProfileHeader() {
             setLocation(profile.location || "Earth");
             setWebsite(profile.website || "");
             setSelectedFrame(profile.selected_frame || 'default');
+            // @ts-ignore
+            const stats = profile.external_stats || {};
+            setGithubStreak(stats.github_streak || 0);
+            setLeetcodeSolved(stats.leetcode_solved || 0);
+            setWakatimeHours(stats.wakatime_hours || 0);
         }
     }, [
         profile
@@ -1874,7 +1883,13 @@ function ProfileHeader() {
             bio,
             location,
             website,
-            selected_frame: selectedFrame
+            selected_frame: selectedFrame,
+            // @ts-ignore
+            external_stats: {
+                github_streak: githubStreak,
+                leetcode_solved: leetcodeSolved,
+                wakatime_hours: wakatimeHours
+            }
         });
         setIsEditing(false);
     };
@@ -1883,7 +1898,7 @@ function ProfileHeader() {
         className: "h-64 w-full animate-pulse bg-white/5 rounded-2xl mb-8"
     }, void 0, false, {
         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-        lineNumber: 86,
+        lineNumber: 103,
         columnNumber: 25
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1896,7 +1911,7 @@ function ProfileHeader() {
                         className: "absolute inset-0 bg-black/10"
                     }, void 0, false, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 92,
+                        lineNumber: 109,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1905,18 +1920,18 @@ function ProfileHeader() {
                             className: "h-5 w-5"
                         }, void 0, false, {
                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                            lineNumber: 94,
+                            lineNumber: 111,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 93,
+                        lineNumber: 110,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 91,
+                lineNumber: 108,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1932,7 +1947,7 @@ function ProfileHeader() {
                                         className: `absolute -inset-1.5 rounded-full opacity-75 blur animate-pulse group-hover:opacity-100 transition-opacity duration-500 ${currentFrame.class}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 120,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1955,23 +1970,23 @@ function ProfileHeader() {
                                                         className: "h-6 w-6 text-white"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 130,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 112,
+                                                    lineNumber: 129,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 127,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 122,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1979,13 +1994,13 @@ function ProfileHeader() {
                                         title: "Online"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 136,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 101,
+                                lineNumber: 118,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2005,13 +2020,13 @@ function ProfileHeader() {
                                                                 children: "PRO"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 128,
+                                                                lineNumber: 145,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 143,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2022,13 +2037,13 @@ function ProfileHeader() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 130,
+                                                        lineNumber: 147,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 142,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2045,14 +2060,14 @@ function ProfileHeader() {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 140,
+                                                                lineNumber: 157,
                                                                 columnNumber: 37
                                                             }, this),
                                                             "Edit Profile"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 150,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2065,24 +2080,24 @@ function ProfileHeader() {
                                                             className: "h-5 w-5 text-muted-foreground"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                            lineNumber: 150,
+                                                            lineNumber: 167,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 160,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 149,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 141,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2090,7 +2105,7 @@ function ProfileHeader() {
                                         children: bio
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 172,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2103,20 +2118,20 @@ function ProfileHeader() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 161,
+                                                        lineNumber: 178,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: location
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 179,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 160,
+                                                lineNumber: 177,
                                                 columnNumber: 29
                                             }, this),
                                             website && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2126,20 +2141,20 @@ function ProfileHeader() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 183,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: website
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 167,
+                                                        lineNumber: 184,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 182,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2149,38 +2164,38 @@ function ProfileHeader() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 171,
+                                                        lineNumber: 188,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: "Joined December 2025"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 172,
+                                                        lineNumber: 189,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 187,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 176,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 123,
+                                lineNumber: 140,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 99,
+                        lineNumber: 116,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2196,7 +2211,7 @@ function ProfileHeader() {
                                                 className: "h-5 w-5 text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 200,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2206,27 +2221,27 @@ function ProfileHeader() {
                                                         children: "GitHub Streak"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 185,
+                                                        lineNumber: 202,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "font-bold text-green-400",
-                                                        children: "128 Days 🔥"
+                                                        children: githubStreak > 0 ? `${githubStreak} Days 🔥` : "No Data"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 203,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 201,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 199,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2236,7 +2251,7 @@ function ProfileHeader() {
                                                 className: "h-5 w-5 text-orange-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 190,
+                                                lineNumber: 207,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2246,27 +2261,27 @@ function ProfileHeader() {
                                                         children: "LeetCode"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 192,
+                                                        lineNumber: 209,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "font-bold text-orange-400",
-                                                        children: "450 Solved"
+                                                        children: leetcodeSolved > 0 ? `${leetcodeSolved} Solved` : "No Data"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 193,
+                                                        lineNumber: 210,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 191,
+                                                lineNumber: 208,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 189,
+                                        lineNumber: 206,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2276,7 +2291,7 @@ function ProfileHeader() {
                                                 className: "h-5 w-5 text-blue-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 197,
+                                                lineNumber: 214,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2286,33 +2301,33 @@ function ProfileHeader() {
                                                         children: "WakaTime"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 216,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "font-bold text-blue-400",
-                                                        children: "45h / week"
+                                                        children: wakatimeHours > 0 ? `${wakatimeHours}h / week` : "No Data"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 200,
+                                                        lineNumber: 217,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 198,
+                                                lineNumber: 215,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 213,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 181,
+                                lineNumber: 198,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2326,7 +2341,7 @@ function ProfileHeader() {
                                                 children: profile?.hours_focused || 0
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 208,
+                                                lineNumber: 225,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2334,20 +2349,20 @@ function ProfileHeader() {
                                                 children: "Hours Focused"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 226,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 207,
+                                        lineNumber: 224,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-px h-8 bg-white/10"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 228,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2358,7 +2373,7 @@ function ProfileHeader() {
                                                 children: profile?.flows_done || 0
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 213,
+                                                lineNumber: 230,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2366,20 +2381,20 @@ function ProfileHeader() {
                                                 children: "Flows Done"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 214,
+                                                lineNumber: 231,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 229,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-px h-8 bg-white/10"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 216,
+                                        lineNumber: 233,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2387,10 +2402,10 @@ function ProfileHeader() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-2xl font-bold text-white",
-                                                children: "Top 1%"
+                                                children: (profile?.rank_score || 0) > 1000 ? 'Master' : (profile?.rank_score || 0) > 500 ? 'Pro' : 'Rookie'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 218,
+                                                lineNumber: 235,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2398,31 +2413,31 @@ function ProfileHeader() {
                                                 children: "Rank"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 219,
+                                                lineNumber: 238,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 217,
+                                        lineNumber: 234,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 206,
+                                lineNumber: 223,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 179,
+                        lineNumber: 196,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 98,
+                lineNumber: 115,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -2462,7 +2477,7 @@ function ProfileHeader() {
                                         children: "Settings"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 263,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2473,14 +2488,14 @@ function ProfileHeader() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 249,
+                                                lineNumber: 268,
                                                 columnNumber: 37
                                             }, this),
                                             " Edit Profile"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 245,
+                                        lineNumber: 264,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2491,14 +2506,14 @@ function ProfileHeader() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 255,
+                                                lineNumber: 274,
                                                 columnNumber: 37
                                             }, this),
                                             " Frames & Decor"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 270,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2509,20 +2524,20 @@ function ProfileHeader() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 261,
+                                                lineNumber: 280,
                                                 columnNumber: 37
                                             }, this),
                                             " Account"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 257,
+                                        lineNumber: 276,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 243,
+                                lineNumber: 262,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2540,7 +2555,7 @@ function ProfileHeader() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 268,
+                                                lineNumber: 287,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2550,18 +2565,18 @@ function ProfileHeader() {
                                                     className: "h-5 w-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 274,
+                                                    lineNumber: 293,
                                                     columnNumber: 41
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 273,
+                                                lineNumber: 292,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 267,
+                                        lineNumber: 286,
                                         columnNumber: 33
                                     }, this),
                                     activeTab === 'profile' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2574,7 +2589,7 @@ function ProfileHeader() {
                                                         children: "Display Name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 300,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2583,13 +2598,13 @@ function ProfileHeader() {
                                                         className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 282,
+                                                        lineNumber: 301,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 280,
+                                                lineNumber: 299,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2599,7 +2614,7 @@ function ProfileHeader() {
                                                         children: "Bio"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 308,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2608,13 +2623,13 @@ function ProfileHeader() {
                                                         className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none h-24 resize-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 290,
+                                                        lineNumber: 309,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 288,
+                                                lineNumber: 307,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2627,7 +2642,7 @@ function ProfileHeader() {
                                                                 children: "Location"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 298,
+                                                                lineNumber: 317,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2636,13 +2651,13 @@ function ProfileHeader() {
                                                                 className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 299,
+                                                                lineNumber: 318,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 297,
+                                                        lineNumber: 316,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2652,7 +2667,7 @@ function ProfileHeader() {
                                                                 children: "Website"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 306,
+                                                                lineNumber: 325,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2661,19 +2676,19 @@ function ProfileHeader() {
                                                                 className: "w-full bg-black/20 border border-white/10 rounded-lg p-3 focus:ring-2 focus:ring-primary/50 outline-none"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                lineNumber: 307,
+                                                                lineNumber: 326,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                        lineNumber: 305,
+                                                        lineNumber: 324,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 296,
+                                                lineNumber: 315,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2682,13 +2697,13 @@ function ProfileHeader() {
                                                 children: "Save Changes"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 314,
+                                                lineNumber: 333,
                                                 columnNumber: 41
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 279,
+                                        lineNumber: 298,
                                         columnNumber: 37
                                     }, this),
                                     activeTab === 'frames' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2705,7 +2720,7 @@ function ProfileHeader() {
                                                                     className: `absolute -inset-1 rounded-full opacity-75 blur ${frame.class}`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                    lineNumber: 332,
+                                                                    lineNumber: 351,
                                                                     columnNumber: 53
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2714,18 +2729,18 @@ function ProfileHeader() {
                                                                         className: `h-6 w-6 ${frame.color}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                        lineNumber: 334,
+                                                                        lineNumber: 353,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                    lineNumber: 333,
+                                                                    lineNumber: 352,
                                                                     columnNumber: 53
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                            lineNumber: 331,
+                                                            lineNumber: 350,
                                                             columnNumber: 49
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2736,7 +2751,7 @@ function ProfileHeader() {
                                                                     children: frame.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                    lineNumber: 338,
+                                                                    lineNumber: 357,
                                                                     columnNumber: 53
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2744,19 +2759,19 @@ function ProfileHeader() {
                                                                     children: "Unlocked"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 358,
                                                                     columnNumber: 53
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                            lineNumber: 337,
+                                                            lineNumber: 356,
                                                             columnNumber: 49
                                                         }, this)
                                                     ]
                                                 }, frame.id, true, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 326,
+                                                    lineNumber: 345,
                                                     columnNumber: 45
                                                 }, this)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2765,13 +2780,13 @@ function ProfileHeader() {
                                                 children: "Apply Frame"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                lineNumber: 343,
+                                                lineNumber: 362,
                                                 columnNumber: 41
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 324,
+                                        lineNumber: 343,
                                         columnNumber: 37
                                     }, this),
                                     activeTab === 'account' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2784,7 +2799,7 @@ function ProfileHeader() {
                                                     children: "Danger Zone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 355,
+                                                    lineNumber: 374,
                                                     columnNumber: 45
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2792,7 +2807,7 @@ function ProfileHeader() {
                                                     children: "Sign out of your account on this device."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 375,
                                                     columnNumber: 45
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2803,53 +2818,53 @@ function ProfileHeader() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                            lineNumber: 363,
+                                                            lineNumber: 382,
                                                             columnNumber: 49
                                                         }, this),
                                                         "Sign Out"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                                    lineNumber: 359,
+                                                    lineNumber: 378,
                                                     columnNumber: 45
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                            lineNumber: 354,
+                                            lineNumber: 373,
                                             columnNumber: 41
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                        lineNumber: 353,
+                                        lineNumber: 372,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                                lineNumber: 266,
+                                lineNumber: 285,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                        lineNumber: 235,
+                        lineNumber: 254,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                    lineNumber: 228,
+                    lineNumber: 247,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-                lineNumber: 226,
+                lineNumber: 245,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/profile/ProfileHeader.tsx",
-        lineNumber: 89,
+        lineNumber: 106,
         columnNumber: 9
     }, this);
 }

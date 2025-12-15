@@ -2,9 +2,10 @@
 
 import { CreatePost } from "@/components/feed/CreatePost";
 import { FeedPost } from "@/components/feed/FeedPost";
+import { FeedPostSkeleton } from "@/components/feed/FeedPostSkeleton";
 import { StoriesSection } from "@/components/feed/StoriesSection";
 import { createClient } from "@/lib/supabase/client";
-import { Loader2, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface PostWithData {
@@ -30,14 +31,16 @@ export default function FeedPage() {
     const [posts, setPosts] = useState<PostWithData[]>([]);
     const [loading, setLoading] = useState(true);
     const [currentUserId, setCurrentUserId] = useState<string | undefined>(undefined);
+    const [activeTab, setActiveTab] = useState<'foryou' | 'following'>('foryou');
     const supabase = createClient();
 
     const fetchPosts = async () => {
+        setLoading(true);
         try {
             const { data: { user } } = await supabase.auth.getUser();
             if (user) setCurrentUserId(user.id);
 
-            const { data, error } = await supabase
+            let query = supabase
                 .from('posts')
                 .select(`
                     *,
@@ -47,6 +50,27 @@ export default function FeedPage() {
                     comments (count)
                 `)
                 .order('created_at', { ascending: false });
+
+            if (activeTab === 'following' && user) {
+                // Fetch followings first
+                const { data: follows } = await supabase
+                    .from('follows')
+                    .select('following_id')
+                    .eq('follower_id', user.id);
+
+                const followingIds = follows?.map(f => f.following_id) || [];
+
+                if (followingIds.length > 0) {
+                    query = query.in('user_id', followingIds);
+                } else {
+                    // Following no one, return empty
+                    setPosts([]);
+                    setLoading(false);
+                    return;
+                }
+            }
+
+            const { data, error } = await query;
 
             if (error) throw error;
             // @ts-ignore
@@ -71,14 +95,24 @@ export default function FeedPage() {
         return () => {
             supabase.removeChannel(channel);
         };
-    }, []);
+    }, [activeTab]); // Refetch when tab changes
 
     return (
         <div className="w-full pb-20">
             <div className="sticky top-0 z-20 bg-black/60 backdrop-blur-xl border-b border-white/5 px-4 py-3 flex items-center justify-between">
                 <div className="flex gap-6">
-                    <button className="text-white font-bold text-lg border-b-2 border-primary pb-1">For You</button>
-                    <button className="text-muted-foreground font-medium text-lg hover:text-white transition-colors pb-1">Following</button>
+                    <button
+                        onClick={() => setActiveTab('foryou')}
+                        className={`font-bold text-lg pb-1 transition-colors ${activeTab === 'foryou' ? 'text-white border-b-2 border-primary' : 'text-muted-foreground hover:text-white'}`}
+                    >
+                        For You
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('following')}
+                        className={`font-bold text-lg pb-1 transition-colors ${activeTab === 'following' ? 'text-white border-b-2 border-primary' : 'text-muted-foreground hover:text-white'}`}
+                    >
+                        Following
+                    </button>
                 </div>
             </div>
 
@@ -88,14 +122,20 @@ export default function FeedPage() {
 
             <div className="mt-6 space-y-6">
                 {loading ? (
-                    <div className="flex justify-center py-12">
-                        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                    </div>
+                    <>
+                        <FeedPostSkeleton />
+                        <FeedPostSkeleton />
+                        <FeedPostSkeleton />
+                    </>
                 ) : posts.length > 0 ? (
                     posts.map((post) => (
                         <FeedPost
                             key={post.id}
                             id={post.id}
+                            userId={
+                                // @ts-ignore
+                                post.user_id
+                            }
                             currentUserId={currentUserId}
                             user={{
                                 name: post.profiles?.full_name || 'Unknown User',
@@ -119,9 +159,13 @@ export default function FeedPage() {
                         <div className="h-16 w-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
                             <Sparkles className="h-8 w-8 text-muted-foreground" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">No flows yet</h3>
+                        <h3 className="text-xl font-bold text-white mb-2">
+                            {activeTab === 'following' ? "No following posts" : "No flows yet"}
+                        </h3>
                         <p className="text-muted-foreground max-w-sm mx-auto">
-                            Be the first to share your daily flow! Use the input above to create a post.
+                            {activeTab === 'following'
+                                ? "Follow some creators to see their flows here."
+                                : "Be the first to share your daily flow! Use the input above to create a post."}
                         </p>
                     </div>
                 )}

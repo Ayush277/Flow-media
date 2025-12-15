@@ -54,6 +54,11 @@ export function ProfileHeader() {
     const [website, setWebsite] = useState("");
     const [selectedFrame, setSelectedFrame] = useState('default');
 
+    // Stats state
+    const [githubStreak, setGithubStreak] = useState(0);
+    const [leetcodeSolved, setLeetcodeSolved] = useState(0);
+    const [wakatimeHours, setWakatimeHours] = useState(0);
+
     // Sync profile data when loaded
     useEffect(() => {
         if (profile) {
@@ -62,6 +67,12 @@ export function ProfileHeader() {
             setLocation(profile.location || "Earth");
             setWebsite(profile.website || "");
             setSelectedFrame(profile.selected_frame || 'default');
+
+            // @ts-ignore
+            const stats = profile.external_stats || {};
+            setGithubStreak(stats.github_streak || 0);
+            setLeetcodeSolved(stats.leetcode_solved || 0);
+            setWakatimeHours(stats.wakatime_hours || 0);
         }
     }, [profile]);
 
@@ -76,7 +87,13 @@ export function ProfileHeader() {
             bio,
             location,
             website,
-            selected_frame: selectedFrame
+            selected_frame: selectedFrame,
+            // @ts-ignore
+            external_stats: {
+                github_streak: githubStreak,
+                leetcode_solved: leetcodeSolved,
+                wakatime_hours: wakatimeHours
+            }
         });
         setIsEditing(false);
     };
@@ -183,21 +200,21 @@ export function ProfileHeader() {
                             <Github className="h-5 w-5 text-white" />
                             <div>
                                 <p className="text-xs text-muted-foreground">GitHub Streak</p>
-                                <p className="font-bold text-green-400">128 Days 🔥</p>
+                                <p className="font-bold text-green-400">{githubStreak > 0 ? `${githubStreak} Days 🔥` : "No Data"}</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit">
                             <Code2 className="h-5 w-5 text-orange-500" />
                             <div>
                                 <p className="text-xs text-muted-foreground">LeetCode</p>
-                                <p className="font-bold text-orange-400">450 Solved</p>
+                                <p className="font-bold text-orange-400">{leetcodeSolved > 0 ? `${leetcodeSolved} Solved` : "No Data"}</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3 px-3 py-2 rounded-xl bg-black/20 border border-white/5 min-w-fit">
                             <Terminal className="h-5 w-5 text-blue-500" />
                             <div>
                                 <p className="text-xs text-muted-foreground">WakaTime</p>
-                                <p className="font-bold text-blue-400">45h / week</p>
+                                <p className="font-bold text-blue-400">{wakatimeHours > 0 ? `${wakatimeHours}h / week` : "No Data"}</p>
                             </div>
                         </div>
                     </div>
@@ -215,7 +232,9 @@ export function ProfileHeader() {
                         </div>
                         <div className="w-px h-8 bg-white/10" />
                         <div className="text-center">
-                            <p className="text-2xl font-bold text-white">Top 1%</p>
+                            <p className="text-2xl font-bold text-white">
+                                {(profile?.rank_score || 0) > 1000 ? 'Master' : (profile?.rank_score || 0) > 500 ? 'Pro' : 'Rookie'}
+                            </p>
                             <p className="text-xs text-muted-foreground uppercase tracking-wider">Rank</p>
                         </div>
                     </div>
