@@ -1,0 +1,14 @@
+(globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
+    script: typeof document === "object" ? document.currentScript : undefined,
+    chunks: [
+  "static/chunks/node_modules_tailwind-merge_dist_bundle-mjs_mjs_56b6fd65._.js",
+  "static/chunks/node_modules_motion-dom_dist_es_da948acf._.js",
+  "static/chunks/node_modules_framer-motion_dist_es_b71551f1._.js",
+  "static/chunks/node_modules_@supabase_realtime-js_dist_module_a6b8d2d8._.js",
+  "static/chunks/node_modules_@supabase_storage-js_dist_module_4307daaa._.js",
+  "static/chunks/node_modules_@supabase_auth-js_dist_module_58e31de5._.js",
+  "static/chunks/node_modules_a18b79c4._.js",
+  "static/chunks/src_591a18ca._.js"
+],
+    source: "dynamic"
+});

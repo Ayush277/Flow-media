@@ -1,109 +1,160 @@
 "use client";
 
 import { GlowCard } from "@/components/ui/GlowCard";
+import { createClient } from "@/lib/supabase/client";
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { Image as ImageIcon, ListTodo, Loader2, Send, X } from "lucide-react";
+import { Image as ImageIcon, Loader2, Send, X } from "lucide-react";
 import { useRef, useState } from "react";
 
-export function CreatePost() {
+export function CreatePost({ onPostCreated }: { onPostCreated?: () => void }) {
     const [content, setContent] = useState("");
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-    const [isUploading, setIsUploading] = useState(false);
+    const [selectedImage, setSelectedImage] = useState<File | null>(null);
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const supabase = createClient();
 
     const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
-            // Create a fake local URL for preview
-            const url = URL.createObjectURL(file);
-            setSelectedImage(url);
+            setSelectedImage(file);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImagePreview(reader.result as string);
+            };
+            reader.readAsDataURL(file);
         }
     };
 
-    const handlePost = async () => {
-        setIsUploading(true);
-        // Simulate network request
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setIsUploading(false);
-        setContent("");
+    const removeImage = () => {
         setSelectedImage(null);
-        // In a real app, we would trigger a feed refresh here
+        setImagePreview(null);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+    };
+
+    const handleSubmit = async () => {
+        if (!content.trim() && !selectedImage) return;
+
+        setIsSubmitting(true);
+        try {
+            const { data: { user } } = await supabase.auth.getUser();
+            if (!user) throw new Error("Not authenticated");
+
+            let imageUrl = null;
+
+            // Upload Image if exists
+            if (selectedImage) {
+                const fileExt = selectedImage.name.split('.').pop();
+                const fileName = `${user.id}/${Math.random()}.${fileExt}`;
+                const { error: uploadError } = await supabase.storage
+                    .from('post-images')
+                    .upload(fileName, selectedImage);
+
+                if (uploadError) throw uploadError;
+
+                const { data: { publicUrl } } = supabase.storage
+                    .from('post-images')
+                    .getPublicUrl(fileName);
+
+                imageUrl = publicUrl;
+            }
+
+            // Insert Post
+            const { data: post, error: postError } = await supabase
+                .from('posts')
+                .insert({
+                    user_id: user.id,
+                    content,
+                    image_url: imageUrl
+                })
+                .select()
+                .single();
+
+            if (postError) throw postError;
+
+            // Reset Form
+            setContent("");
+            removeImage();
+            if (onPostCreated) onPostCreated();
+
+        } catch (error) {
+            console.error("Error creating post:", error);
+            alert("Failed to post. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
         <div className="mb-8 px-4 md:px-0">
-            <GlowCard className="rounded-3xl backdrop-blur-xl border-white/5">
-                <div className="flex gap-4 p-5">
-                    <div className="shrink-0">
-                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold shadow-lg shadow-primary/20 ring-2 ring-black/50">
-                            Y
-                        </div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                        <textarea
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            placeholder="What's your flow for today?"
-                            className="w-full bg-transparent border-none focus:ring-0 text-lg placeholder:text-muted-foreground/50 resize-none min-h-[80px] p-0 mb-2 text-white font-light tracking-wide"
-                        />
+            <GlowCard className="rounded-3xl p-1 backdrop-blur-xl border-white/5">
+                <div className="bg-black/40 rounded-[22px] p-4">
+                    <div className="flex gap-4">
+                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 shrink-0" />
+                        <div className="flex-1">
+                            <textarea
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                                placeholder="Share your flow..."
+                                className="w-full bg-transparent border-none focus:ring-0 text-lg placeholder:text-muted-foreground/50 resize-none min-h-[60px]"
+                            />
 
-                        <AnimatePresence>
-                            {selectedImage && (
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0, scale: 0.95 }}
-                                    animate={{ opacity: 1, height: "auto", scale: 1 }}
-                                    exit={{ opacity: 0, height: 0, scale: 0.95 }}
-                                    className="relative rounded-2xl overflow-hidden mb-4 border border-white/10 shadow-2xl"
-                                >
-                                    <img src={selectedImage} alt="Preview" className="w-full max-h-[300px] object-cover" />
-                                    <button
-                                        onClick={() => setSelectedImage(null)}
-                                        className="absolute top-2 right-2 p-1.5 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors backdrop-blur-md"
+                            <AnimatePresence>
+                                {imagePreview && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: "auto" }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        className="relative rounded-xl overflow-hidden mb-4 group"
                                     >
-                                        <X className="h-4 w-4" />
-                                    </button>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                                        <img src={imagePreview} alt="Preview" className="w-full max-h-[300px] object-cover rounded-xl" />
+                                        <button
+                                            onClick={removeImage}
+                                            className="absolute top-2 right-2 p-1.5 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                                        >
+                                            <X className="h-4 w-4" />
+                                        </button>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
 
-                        <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                            <div className="flex gap-1 -ml-2">
+                            <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/5">
+                                <div className="flex gap-2">
+                                    <button
+                                        onClick={() => fileInputRef.current?.click()}
+                                        className="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors"
+                                    >
+                                        <ImageIcon className="h-5 w-5" />
+                                    </button>
+                                    <input
+                                        type="file"
+                                        ref={fileInputRef}
+                                        className="hidden"
+                                        accept="image/*"
+                                        onChange={handleImageSelect}
+                                    />
+                                </div>
                                 <button
-                                    onClick={() => fileInputRef.current?.click()}
-                                    className="p-2.5 rounded-full hover:bg-primary/10 text-primary transition-colors group"
-                                    title="Add Image Proof"
+                                    onClick={handleSubmit}
+                                    disabled={(!content.trim() && !selectedImage) || isSubmitting}
+                                    className={cn(
+                                        "px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 transition-all",
+                                        (content.trim() || selectedImage) && !isSubmitting
+                                            ? "bg-primary text-white hover:opacity-90"
+                                            : "bg-white/5 text-muted-foreground cursor-not-allowed"
+                                    )}
                                 >
-                                    <ImageIcon className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                                </button>
-                                <input
-                                    type="file"
-                                    ref={fileInputRef}
-                                    className="hidden"
-                                    accept="image/*"
-                                    onChange={handleImageSelect}
-                                />
-                                <button className="p-2.5 rounded-full hover:bg-primary/10 text-primary transition-colors group" title="Add Task List">
-                                    <ListTodo className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                                    {isSubmitting ? (
+                                        <Loader2 className="h-4 w-4 animate-spin" />
+                                    ) : (
+                                        <>
+                                            Post Flow
+                                            <Send className="h-3.5 w-3.5" />
+                                        </>
+                                    )}
                                 </button>
                             </div>
-
-                            <button
-                                onClick={handlePost}
-                                disabled={(!content.trim() && !selectedImage) || isUploading}
-                                className="px-6 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white font-bold text-sm hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-2 shadow-lg shadow-primary/25"
-                            >
-                                {isUploading ? (
-                                    <>
-                                        <Loader2 className="h-4 w-4 animate-spin" />
-                                        Posting
-                                    </>
-                                ) : (
-                                    <>
-                                        Post Flow
-                                        <Send className="h-3.5 w-3.5" />
-                                    </>
-                                )}
-                            </button>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,8 @@
+{
+  "/(main)/feed/page": "app/(main)/feed/page.js",
+  "/(main)/profile/page": "app/(main)/profile/page.js",
+  "/(main)/tasks/page": "app/(main)/tasks/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
+}
